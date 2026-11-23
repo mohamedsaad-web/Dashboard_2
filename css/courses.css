@@ -1,0 +1,105 @@
+/* Start Global Rules */
+:root {
+  --body-color: #f1f5f9;
+  --alt-color: #eeeeee;
+  --main-transition: 0.3s;
+  --blue: #0075ff;
+  --dark-blue: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+::selection {
+  background-color: var(--blue);
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-blue);
+}
+/* End Global Rules */
+/* Start Widgets */
+.widgets {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .widgets {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.widgets .card {
+  overflow: hidden;
+}
+
+.widgets .card .image img:first-child {
+  width: 100%;
+}
+.widgets .card .image img.person {
+  width: 64px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.widgets .card .details {
+  padding-bottom: 40px;
+}
+.widgets .card .details h4 {
+  margin-bottom: 15px;
+  font-size: 17px;
+  letter-spacing: -1px;
+}
+.widgets .card .details p {
+  color: var(--grey-color);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.widgets .card .foot {
+  border-top: 1px solid #eee;
+}
+.widgets .card .foot .info {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--blue);
+  color: white;
+  padding: 3px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+.widgets .card .foot .members,
+.widgets .card .foot .price {
+  color: var(--grey-color);
+  font-size: 13px;
+  font-weight: 500;
+}
+/* End Widgets */

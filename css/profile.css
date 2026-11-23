@@ -1,0 +1,297 @@
+/* Start Global Rules */
+:root {
+  --body-color: #f1f5f9;
+  --alt-color: #eeeeee;
+  --main-transition: 0.3s;
+  --blue: #0075ff;
+  --dark-blue: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+::selection {
+  background-color: var(--blue);
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-blue);
+}
+/* End Global Rules */
+/* Start Widgets */
+.widgets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .widgets {
+    margin: 20px 10px 20px;
+  }
+}
+.widgets > div {
+  background-color: white;
+}
+.widgets > div:first-child {
+  grid-column: span 3;
+}
+.widgets > div:last-child {
+  grid-column: span 2;
+}
+@media (max-width: 767px) {
+  .widgets {
+    display: block;
+  }
+  .widgets > div {
+    margin-bottom: 20px;
+  }
+  .widgets > div:last-child {
+    margin-top: 40px;
+  }
+}
+
+/* Start Big */
+.big .identify {
+  flex-basis: 250px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .big .identify {
+    padding: 20px 0 40px;
+  }
+}
+.big .identify::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #dddddd6e;
+  width: 1px;
+  height: 300px;
+}
+
+.big .identify .content img {
+  width: 120px;
+}
+.big .identify .content h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.big .identify .content span.level {
+  color: var(--grey-color);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 15px;
+}
+.big .identify .content .line {
+  background-color: #eee;
+  width: 150px;
+  height: 6px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .big .identify .content .line {
+    width: 200px;
+  }
+}
+.big .identify .content .line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--blue);
+  height: 100%;
+  width: 70%;
+  border-radius: 20px;
+  transition: var(--main-transition);
+}
+.big .identify .content .icons i {
+  color: var(--orange-color);
+  font-size: 13px;
+}
+.big .identify .content .rate {
+  color: var(--grey-color);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.big .body .box {
+  transition: var(--main-transition);
+}
+.big .body .box:hover {
+  background-color: #f4f4f4a7;
+}
+.big .body .box:not(:last-child) {
+  border-bottom: 1px solid #ddddddab;
+}
+.big .body .box > div,
+.big .body .box > div > h3 {
+  margin-bottom: 10px;
+}
+.big .body .box > div,
+.big .body .box > label {
+  flex-basis: 250px;
+}
+
+.big .body .box .info h3 {
+  color: var(--grey-color);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+.big .body .box .info p,
+.big .body .box .gender,
+.big .body .box .country {
+  color: var(--grey-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+.big .body .box .info p > span,
+.big .body .box .gender > span,
+.big .body .box .country > span {
+  color: black;
+}
+.big .body .box label input {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: none;
+}
+.big .body .box label .toogle {
+  background-color: #ccc;
+  height: 20px;
+  width: 80px;
+  border-radius: 20px;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.big .body .box label .toogle::before {
+  content: "\f00d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  font-size: 8px;
+  color: var(--grey-color);
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--main-transition);
+}
+.big .body .box label input:checked + .toogle {
+  background-color: var(--blue);
+}
+.big .body .box label input:checked + .toogle::before {
+  content: "\f00c";
+  left: 63px;
+}
+/* End Big */
+/* Start Skills */
+.skills > p {
+  color: var(--grey-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+.skills ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.skills ul li span {
+  display: inline-block;
+  background-color: #eee;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+@media (max-width: 767px) {
+  .skills ul li {
+    text-align: center;
+  }
+}
+/* End Skills */
+/* Start Activities */
+.last-activities > p {
+  color: var(--grey-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+.last-activities .activities .rectangle:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.last-activities .activities .rectangle .info img {
+  width: 64px;
+  margin-right: 10px;
+}
+.last-activities .activities .rectangle .info .text h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.last-activities .activities .rectangle .info .text p {
+  color: var(--grey-color);
+  font-weight: 500;
+}
+.last-activities .activities .rectangle .tail .time {
+  text-align: end;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.last-activities .activities .rectangle .tail span.day {
+  color: var(--grey-color);
+  font-weight: 500;
+}
+
+@media (max-width : 767px) {
+    .last-activities .activities .rectangle {
+        flex-direction: column;
+        text-align: center;
+    }
+    .last-activities .activities .rectangle .info {
+        flex-direction: column;
+    }
+    .last-activities .activities .rectangle .info img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .last-activities .activities .rectangle .tail .time {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+/* End Activities */
+
+/* End Widgets */

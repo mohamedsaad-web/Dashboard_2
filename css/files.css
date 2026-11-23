@@ -1,0 +1,192 @@
+/* Start Global Rules */
+:root {
+  --body-color: #f1f5f9;
+  --alt-color: #eeeeee;
+  --main-transition: 0.3s;
+  --blue: #0075ff;
+  --dark-blue: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+::selection {
+  background-color: var(--blue);
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-blue);
+}
+/* End Global Rules */
+
+@media (max-width: 767px) {
+  .widegts {
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* Start Files */
+
+.files {
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+@media (max-width: 767px) {
+  .files {
+    order: 2;
+  }
+}
+
+.files .card i {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  color: var(--grey-color);
+  font-size: 18px;
+}
+.files .card .body {
+  padding: 15px 0;
+}
+.files .card img {
+  width: 64px;
+  transition: var(--main-transition);
+  margin-bottom: 16px;
+}
+.files .card img:hover {
+  transform: rotate(6deg);
+}
+.files .card h6 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.files .card span.name {
+  color: var(--grey-color);
+  font-size: 13px;
+  font-weight: 500;
+}
+.files .card .foot {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.files .card .foot .date,
+.files .card .foot .space {
+  color: var(--grey-color);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* End Files */
+/* Start Statistics*/
+.statistics {
+  flex-basis: 260px;
+}
+@media (max-width: 767px) {
+  .statistics {
+    order: 1;
+  }
+}
+.statistics .box {
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+  transition: var(--main-transition);
+}
+.statistics .box:hover {
+    background-color: #f4f4f4;
+}
+.statistics .box .info i {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(0 117 255 / 20%);
+  color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  
+}
+.statistics .box:nth-of-type(2) .info i{
+    background-color: rgb(34 197 94 / 20%);
+    color: var(--green-color);
+}
+.statistics .box:nth-of-type(3) .info i{
+    background-color: rgb(244 67 54 / 20%);
+    color: var(--red-color);
+}
+.statistics .box:nth-of-type(4) .info i{
+    background-color: rgb(245 158 11 / 20%);
+    color: var(--orange-color);
+}
+.statistics .box .info .details {
+}
+.statistics .box .info .details .title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.statistics .box .info .details p,
+.statistics .box .giga {
+  color: var(--grey-color);
+  font-size: 13px;
+  font-weight: 500;
+}
+.statistics > a {
+  background-color: var(--blue);
+  color: white;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  width: fit-content;
+  border-radius: 6px;
+  margin: 0 auto;
+  transition: var(--main-transition);
+}
+.statistics > a i {
+  margin-right: 5px;
+  font-size: 13px;
+}
+.statistics > a:hover {
+  background-color: var(--dark-blue);
+}
+.statistics > a:hover i {
+  animation: zegzag 0.4s infinite alternate;
+}
+/* Start Animation */
+@keyframes zegzag {
+  0%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+/* End Animation */
+/* End Statistics*/
